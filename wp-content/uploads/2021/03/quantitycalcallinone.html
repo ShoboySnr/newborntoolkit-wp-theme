@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 50px auto;
+}
+
+.wrapper input {
+	width: 75px;
+}
+
+.container {
+	width: 400px;
+	float: center;
+}
+
+.container input{
+	width: 75px;
+	padding = 250px;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 3em;
+  margin: 0 0 0.1em 0;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin: 0 0 50px;
+  color: #999;
+  text-align: center;
+}
+
+h3 {
+	font-weight: 200;
+	font-size: 0.9em;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+h4 {
+	font-weight: 200;
+	font-size: 0.9em;
+	margin: 0 0 20px;
+	text-align: left;
+}
+
+h5 {
+	font-weight: 200;
+	font-size: 0.9em;
+	margin: 0 0 20px;
+	text-align: right;
+}
+
+a {
+  margin-top: 50px;
+  display: block;
+  color: #3e95cd;
+}
+
+h6 {
+	font-weight: 300;
+	font-size: 1.5em;
+	margin: 0 0 20px;
+	text-align: center;
+</style>
+  <head>
+    <title>Device Quantity Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Device Quantity Calculator</h1>
+      <h2>Estimated quantity and cost of medical devices to meet facility need</h2>
+	  
+	  
+		  <form>
+		  
+			<h3>Occupancy rate per day: <input type="number" id="occupancy" value="30"><br></h3>
+			
+			<div class="container">
+			<h4>
+			<table>
+			<tr>
+			<td>Number of Radiant Warmers:</td>
+			<td><input type="number" id="currentrad" value="3" ></td>
+			</tr>
+			<tr>
+			<td>Number of Oxygen Concentrators:</td>
+			<td><input type="number" id="currentoxy" value="4" ></td>
+			</tr>
+			<tr>
+			<td>Number of Pulse Oximeters:</td> 
+			<td><input type="number" id="currentpulse" value="6" ></td>
+			</tr>
+			</table>
+			</h4>
+			</div>
+			
+			<h3><input type="button" value="Calculate" id="calcbutton" onclick="calc()"><br><br></h3>
+		  </form>
+		
+	<canvas id="myChart" width="1600" height="900"></canvas><br>
+	
+	<h6 id="cost"></h6>
+	
+    </div>
+
+	<script>
+	function calc(){
+var occupancy = document.getElementById('occupancy').value
+
+var currentrad = document.getElementById('currentrad').value
+var currentoxy = document.getElementById('currentoxy').value
+var currentpulse = document.getElementById('currentpulse').value
+var data1 = [currentrad, currentoxy, currentpulse]
+
+var needrad = Math.floor(occupancy/4-currentrad)
+var needoxy = Math.floor(occupancy/5 - currentoxy)
+var needpulse = Math.floor(occupancy/3 - currentpulse)
+var data2 = [needrad, needoxy, needpulse]
+
+var prices = [2000, 2500, 600]
+var costs = data2[0]*prices[0] + data2[1]*prices[1] + data2[2]*prices[2]
+document.getElementById("cost").innerHTML = "Estimated total costs: $" + costs + " USD"
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+	  labels: ["radiant warmer", "oxygen concentrator", "pulse oximeter"],
+	  datasets: [
+	  {
+		  label: "Current Number of Devices",
+		  backgroundColor: "#3e95cd",
+		  data: data1
+	  }, {
+		  label: "Additional Devices Needed",
+		  backgroundColor: "#8e5ea2",
+		  data: data2
+	  }
+	  ]
+  },
+  options: {
+	  legend: {display: true },
+	  title: {
+		  display: true,
+		  text: 'Device Quantity by Facility Size'
+	  },
+	  scales: {
+		  xAxes: [{
+			  stacked: true
+		  }],
+		  yAxes: [{
+			stacked: true
+		  }]
+	  }
+  }
+});
+}
+	</script>
+	
+  </body>
+</html>

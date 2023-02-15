@@ -1,0 +1,80 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-23 20:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. Name of the plugin
+#: settings/class-settings.php:213 settings/class-settings.php:214
+msgid "Sticky Posts - Switch"
+msgstr ""
+
+#: settings/class-settings.php:228
+msgid "Sticky Post Settings"
+msgstr ""
+
+#: settings/class-settings.php:264
+msgid "Post Types"
+msgstr ""
+
+#: settings/class-settings.php:291
+msgid "Multilingual settings"
+msgstr ""
+
+#: settings/class-settings.php:301
+msgid "Multilingual posts"
+msgstr ""
+
+#: settings/class-settings.php:307
+msgid "Set all the translations sticky, when one post is set."
+msgstr ""
+
+#: settings/class-settings.php:317
+msgid "Change the display options for the admin sticky post column."
+msgstr ""
+
+#: settings/class-settings.php:321
+msgid "Handle the post selection of custom post types."
+msgstr ""
+
+#: settings/class-settings.php:341
+#, php-format
+msgid "Active multilingual plugin found: %s"
+msgstr ""
+
+#: settings/class-settings.php:345
+msgid "There are no supported multilingual plugins active."
+msgstr ""
+
+#: settings/class-settings.php:350
+#, php-format
+msgid "Supported Plugins: %s, %s"
+msgstr ""
+
+#: settings/class-settings.php:366
+msgid "Post type"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"This plugin adds a sticky post switch functionality to the admin list "
+"post/custom post type pages."
+msgstr ""
+
+#. Author of the plugin
+msgid "Markus Wiesenhofer"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "mailto:markusfroehlich01@gmail.com"
+msgstr ""

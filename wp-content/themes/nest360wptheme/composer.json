@@ -1,0 +1,22 @@
+{
+    "name": "nest360/nestwptheme",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "NEST360WPTheme\\endpoints\\": "endpoints/",
+            "NEST360WPTheme\\inc\\": "inc/",
+            "NEST360WPTheme\\custom_posts\\": "custom_posts/",
+            "NEST360WPTheme\\wp_trigger\\": "wp_trigger/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Damilare",
+            "email": "oluwadamilareshobowale@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "drewm/drip": "^0.7.0"
+    }
+}

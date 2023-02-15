@@ -1,0 +1,99 @@
+/* block.css */
+div.s14-collapsible-box {
+    border: 1px black solid;
+    border-left-width: 2px;
+    padding: 10px 15px;
+    margin: 30px 0;
+}
+
+div.s14-collapsible-box h4 {
+    font-size: 18px;
+    margin:0 0 10px 0;
+}
+div.s14-collapsible-box p {
+    font-size: 16px;
+    line-height: 24px;
+    margin:0;
+}
+
+div.s14-collapsible-box input.collapsible-title {
+    height: 45px;
+    font-size: 17px;
+    border: 1px #000 solid;
+    border-left-width: 2px;
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+div.s14-collapsible-box .rich-text {
+    border: 1px #000 solid;
+    border-left-width: 2px;
+    padding-left: 10px;
+    min-height: 120px;
+}
+
+div.s14-collapsible-box .collapsible-label-title {
+    font-size: 13px;
+}
+
+div.s14-collapsible-box .collapsible-checkbox {
+    display: none;
+}
+
+div.s14-collapsible-view-box {
+    position: relative;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+div.s14-collapsible-view-box label {
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    margin-bottom: 5px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    font-weight: bold;
+}
+
+div.s14-collapsible-view-box label::before {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M9.077 25.99h14v14a1 1 0 102 0v-14h14a1 1 0 100-2h-14v-14a1 1 0 10-2 0v14h-14a1 1 0 100 2z"/></svg>');
+    display: inline-block;
+    vertical-align: middle;
+    right: 0;
+    top: 43%;
+    transform: translateY(-2px);
+    position: absolute;
+    width: 24px;
+    transition: transform .2s ease-out;
+}
+
+div.s14-collapsible-view-box input[type=checkbox] {
+    display: none;
+}
+
+div.s14-collapsible-view-box .collapsible-content {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+div.s14-collapsible-view-box input[type=checkbox]:checked ~ .collapsible-content {
+    visibility: visible;
+    opacity: 1;
+    height: max-content;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+div.s14-collapsible-view-box input[type=checkbox]:checked ~ label::before {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>');
+    transform: rotate(180deg);
+}
+
+div.s14-collapsible-view-box input[type=checkbox]:checked ~ label {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}

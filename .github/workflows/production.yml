@@ -1,0 +1,25 @@
+name: "DEPLOY TO PRODUCTION"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - id: deploy
+        name: DEPLOY TO PRODUCTION
+        uses: idoberko2/dokku-deploy-github-action@v1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+          dokku-host: ${{ secrets.DOKKU_HOST }}
+          app-name: ${{ secrets.DOKKU_APP_NAME }}
+          dokku-user: ${{ secrets.DOKKU_USER }}
+          remote-branch: "master"
+          git-push-flags: "--force"

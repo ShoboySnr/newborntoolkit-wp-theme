@@ -1,0 +1,69 @@
+.entry-content {
+
+	.wp-block-custom-block-container {
+		padding: 30px 50px;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	}
+}
+
+section.wp-block-collapsible-block-container {
+	border-bottom: 1.5px solid #333333;
+	margin-bottom: 30px;
+	padding-bottom: 0;
+}
+
+.wp-block-collapsible-block-container {
+
+	input[type=checkbox] {
+		display: none;
+
+		&:checked {
+			~ .collapsible-content {
+				visibility: visible;
+				opacity: 1;
+				height: max-content;
+				transition: visibility 0s linear 0s, opacity 300ms;
+			}
+
+			~ .s14-collapsible-label {
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+
+				&:before {
+					content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>');
+					transform: rotate(180deg);
+					margin-top: -6px;
+				}
+			}
+		}
+	}
+
+	.s14-collapsible-label {
+		transition: all 0.25s ease-out;
+		cursor: pointer;
+		margin-bottom: 15px;
+		position: relative;
+		width: 100%;
+		display: flex;
+	}
+
+	.s14-collapsible-label:before {
+		content: url('data:image/svg+xml; utf8, <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="10.8335" width="3.33333" height="25" fill="black"/> <rect y="14.1666" width="3.33333" height="25" transform="rotate(-90 0 14.1666)" fill="black"/> </svg>');
+		display: inline-block;
+		vertical-align: middle;
+		right: 0;
+		transform: translateY(-2px);
+		position: absolute;
+		width: 25px;
+		transition: transform 0.2s ease-out;
+	}
+
+	.collapsible-content {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		height: 0;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s linear 300ms, opacity 300ms;
+	}
+}
